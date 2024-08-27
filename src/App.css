@@ -1,5 +1,4 @@
 
-
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -11,9 +10,10 @@
   /* border: 2px solid #000; */
   position: relative;
   overflow: hidden;
-  background-image: url('/typer-shark/src/images/background.jpg');
+  /* background-image: url('/background.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: rgb(9, 85, 85);
 }
 
 .shark-container {
@@ -31,7 +31,7 @@
 .word-overlay {
   position: absolute;
   font-size: 18px;
-  color: rgb(255, 255, 255); /* Ensure the text is visible on the shark image */
+  color: rgb(0, 0, 0); /* Ensure the text is visible on the shark image */
   font-weight: bold;
 }
 

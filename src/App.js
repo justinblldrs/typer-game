@@ -6,6 +6,16 @@ function App() {
   const [inputValue, setInputValue] = useState('');
   const [score, setScore] = useState(0);
 
+  // Array of different shark images
+  const sharkImages = [
+    '/sharky.png',
+    '/puffer.png',
+    '/nemo.png',
+    '/whale.png',
+
+    // Add more image paths as needed
+  ];
+
   useEffect(() => {
     // Function to add a new shark at regular intervals
     const interval = setInterval(() => {
@@ -14,6 +24,7 @@ function App() {
         text: generateRandomWord(),
         position: 0,
         topPosition: generateRandomTopPosition(),
+        image: getRandomSharkImage(), // Assign a random shark image
       };
       setSharks(prevSharks => [...prevSharks, newShark]);
     }, 2000);
@@ -28,7 +39,7 @@ function App() {
         return prevSharks.map(shark => ({
           ...shark,
           position: shark.position + 5,
-        })).filter(shark => shark.position < 200);
+        })).filter(shark => shark.position < 100);
       });
     }, 200);
 
@@ -41,8 +52,12 @@ function App() {
   };
 
   const generateRandomTopPosition = () => {
-    // Generate a random number between 10% and 80% (keeping some margin)
-    return Math.floor(Math.random() * 71) + 10;
+    // Generate a random number between 10% and 70% (keeping some margin)
+    return Math.floor(Math.random() * 61) + 10;
+  };
+
+  const getRandomSharkImage = () => {
+    return sharkImages[Math.floor(Math.random() * sharkImages.length)];
   };
 
   const handleInputChange = (e) => {
@@ -60,7 +75,7 @@ function App() {
     <div className="App">
       <h1>Typer Shark</h1>
       <div className="game-board">
-      <p>Score: {score}</p>
+        <p>Score: {score}</p>
         {sharks.map(shark => (
           <div
             key={shark.id}
@@ -71,7 +86,7 @@ function App() {
             }}
           >
             <img
-              src="" // Replace with your shark image path
+              src={shark.image} // Use the randomly selected shark image
               alt="Shark"
               className="shark"
             />
