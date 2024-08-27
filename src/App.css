@@ -1,38 +1,45 @@
+
+
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.game-board {
+  width: 100%;
+  height: 450px;
+  /* border: 2px solid #000; */
+  position: relative;
+  overflow: hidden;
+  background-image: url('/typer-shark/src/images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.shark-container {
+  position: absolute;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.shark {
+  width: 200px; /* Adjust the size as needed */
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.word-overlay {
+  position: absolute;
+  font-size: 18px;
+  color: rgb(255, 255, 255); /* Ensure the text is visible on the shark image */
+  font-weight: bold;
+}
+
+.inputs{
+  border-radius: 50px;
+  border-color: antiquewhite;
+  height: 40px;
+  width: 200px;
+  margin-top: 10px;
+
 }
