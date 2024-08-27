@@ -24,14 +24,16 @@
 }
 
 .shark {
-  width: 200px; /* Adjust the size as needed */
-  height: auto;
+  width:150px; /* Set the width to your desired size */
+  height: auto; /* Maintains aspect ratio based on width */
+  display: block;
+  /* Adjust width and height as needed. */
 }
 
 .word-overlay {
   position: absolute;
-  font-size: 18px;
-  color: rgb(0, 0, 0); /* Ensure the text is visible on the shark image */
+  font-size: 25px;
+  color: rgb(12, 2, 2); /* Ensure the text is visible on the shark image */
   font-weight: bold;
 }
 

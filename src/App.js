@@ -73,7 +73,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Typer Shark</h1>
+      <h1>Typer Fish</h1>
       <div className="game-board">
         <p>Score: {score}</p>
         {sharks.map(shark => (
